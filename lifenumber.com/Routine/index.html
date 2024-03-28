@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Routine Generator</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+    }
+    label {
+        font-weight: bold;
+    }
+    input[type="number"] {
+        width: 50px;
+    }
+    button {
+        padding: 8px 16px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #0056b3;
+    }
+    table {
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: center;
+    }
+    th {
+        background-color: #f2f2f2;
+    }
+</style>
+</head>
+<body>
+
+<label for="numSections">Number of Sections:</label>
+<input type="number" id="numSections" min="1" value="6">
+<button onclick="generateRoutine()">Generate Routine</button>
+
+<div id="routineOutput"></div>
+
+<script>
+function random(val) {
+    return Math.floor(Math.random() * val);
+}
+
+function clsAva(val, tch) {
+    while (true) {
+        const cls = random(val);
+        if (tch[cls] === 0) {
+            return cls;
+        }
+    }
+}
+
+function generateRoutine() {
+    const numSections = parseInt(document.getElementById('numSections').value);
+    const numDays = 5;
+    const numTeachers = 10;
+    const teachers = ["Math", "Physics", "Chemistry", "Biology", "English", "History", "Computer Science", "Geography", "Art", "Music"];
+    const val = teachers.length;
+    const routine = [];
+    const tch = Array(val).fill(0);
+
+    for (let i = 0; i < numSections; i++) {
+        routine.push([]);
+        for (let j = 0; j < numDays; j++) {
+            routine[i].push([]);
+            for (let k = 0; k < numSections; k++) {
+                let cl_n = clsAva(val, tch);
+                if (tch[cl_n] === 0) {
+                    tch[cl_n] = 1;
+                } else {
+                    cl_n = clsAva(val, tch);
+                }
+                routine[i][j][k] = teachers[cl_n];
+                console.log(i + "" + j + "" + k);
+            }
+            tch.fill(0);
+        }
+    }
+
+    const routineOutput = document.getElementById('routineOutput');
+    routineOutput.innerHTML = '<h2>Routine</h2>';
+    for (let i = 0; i < numSections; i++) {
+        routineOutput.innerHTML += `<h3>Section ${i + 1}</h3>`;
+        const table = document.createElement('table');
+        const thead = document.createElement('thead');
+        const tbody = document.createElement('tbody');
+        const headRow = document.createElement('tr');
+        for (let j = 0; j < numSections; j++) {
+            const th = document.createElement('th');
+            th.textContent = `Period ${j + 1}`;
+            headRow.appendChild(th);
+        }
+        thead.appendChild(headRow);
+        for (let j = 0; j < numDays; j++) {
+            const tr = document.createElement('tr');
+            for (let k = 0; k < numSections; k++) {
+                const td = document.createElement('td');
+                td.textContent = routine[i][j][k];
+                tr.appendChild(td);
+            }
+            tbody.appendChild(tr);
+        }
+        table.appendChild(thead);
+        table.appendChild(tbody);
+        routineOutput.appendChild(table);
+    }
+}
+</script>
+
+</body>
+</html>

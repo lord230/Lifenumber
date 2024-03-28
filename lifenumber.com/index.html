@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Protest+Riot&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Protest+Strike&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap" rel="stylesheet">
+    
+    <title>CHECK YOUR BHAGYANK AND MOOLANK</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="t_line">CHECK YOUR BHAGYANK AND MOOLANK</div>
+    <div class="main">
+        <form id="myForm" action="connect.php" method="post">
+            <label for="name">First Name:</label>
+            <input type="text" id="name" name="firstName" placeholder="Enter your First name" required>
+    
+            <label for="age">Last Name:</label>
+            <input type="text" id="age" name="lastName" placeholder="Enter your Last name" required>
+    
+            <label for="birthdate">Birthdate:</label>
+            <input type="date" id="birthdate" name="birthdate" required>
+    
+            <!-- Styled submit button -->
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    <div class="result" id="hidden-div" style="display: none;">
+        <div class="name_it" id="name_it"></div>
+        <div class="mulank">
+            <h1 id="print_m"> </h1>
+            <div class="print_mulank" id="mul_det"></div>
+        </div>
+        <div class="bhagyank">
+            <h1 id="print_bhg"></h1>
+            <div class="print_bhagyank" id="bha_det"></div>
+        </div>
+
+    </div>
+
+</div>
+</div>
+</body>
+<script src="event.js"></script>
+</html>

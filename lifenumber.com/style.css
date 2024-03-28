@@ -1,0 +1,175 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background-color: #000002 ;
+    color: #fff9ff;
+    text-align: center;
+    align-content: center;
+    font-family: "Protest Strike", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.t_line{
+    height: 8vh;
+    font-size: 50px;
+    padding: 20px;
+    font-family: "Protest Strike", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.main{
+    height: 70vh;
+    width: 50vw;
+    border-radius: 50px;
+    margin-left: auto;
+    margin-right:auto ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #F9E4BC;
+}
+form {
+    font-size: 30px;
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    border-radius: 8px;
+    color:#000002;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    text-align: left; /* Align labels to the left */
+    border-radius: 50px;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border-radius: 50px;
+}
+
+input[type="submit"] {
+    margin-top: 15px;
+    background-color: #4caf50; /* Green background color */
+    color: black; /* White text color */
+    padding: 10px 15px; /* Padding around the text */
+    font-size: 20px; /* Font size */
+    border: none; /* Remove border */
+    border-radius: 4px; /* Optional: Add rounded corners */
+    cursor: pointer; /* Add a cursor pointer on hover */
+    font-family: "Protest Strike", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+}
+.result{
+    display: none;
+    margin-top: 20px;
+    padding-top:50px;
+    padding-bottom: 20px;
+    position: relative;
+    height: auto;
+    width: 50vw;
+    border-radius: 50px;
+    margin-left: auto;
+    margin-right:auto ;
+    align-items: center;
+    justify-content: center;
+    background-color: #F9E4BC;
+    text-align: center;
+    font-family: "Kode Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+    color: #000002;
+}
+.mulank{
+    padding-left: 50px;
+    font-family: "Kode Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+    color: #000002;
+    text-align: left;
+    font: 1em sans-serif;
+}
+h1{
+    font-family: "Protest Strike", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.print_mulank{
+    padding-top: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-family: "Kode Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+    font-size: 20px;
+}
+.bhagyank{
+    padding-top: 20%;
+    padding-left: 50px;
+    padding-right: 40px;
+    position: relative;
+    top: 40%;
+    text-align: left;
+    font-family: "Kode Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+}
+.print_bhagyank{
+    padding-top: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-family: "Kode Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+    font-size: 20px;
+}
+.name_it{
+    padding-top: 10px;
+    padding-bottom: 20px;
+    position: relative;
+    text-align: left;
+    padding-left:50px;
+    font-size: 70px;
+}
+@media only screen and (max-width: 1300px) {
+    .main {
+      width: 90vw;
+      margin-top: 100px;
+    }
+    .result{
+        display: none;
+        margin-top: 20px;
+        padding-top:50px;
+        padding-bottom: 20px;
+        position: relative;
+        height: auto;
+        width: 90vw;
+        border-radius: 50px;
+        margin-left: auto;
+        margin-right:auto ;
+        align-items: center;
+        justify-content: center;
+        background-color: #F9E4BC;
+        text-align: center;
+        font-family: "Kode Mono", monospace;
+        font-optical-sizing: auto;
+        font-weight: 200;
+        font-style: normal;
+        color: #000002;
+        padding-right: 20px;
+    }
+  }

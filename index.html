@@ -1,54 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Protest+Riot&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Protest+Strike&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap" rel="stylesheet">
-    
-    <title>CHECK YOUR BHAGYANK AND MOOLANK</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Numerology Calculator</title>
 
-    <link rel="stylesheet" href="style.css">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"/>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-    <div class="t_line">CHECK YOUR BHAGYANK AND MOOLANK</div>
-    <div class="main">
-        <form id="myForm" action="connect.php" method="post">
-            <label for="name">First Name:</label>
-            <input type="text" id="name" name="firstName" placeholder="Enter your First name" required>
-    
-            <label for="age">Last Name:</label>
-            <input type="text" id="age" name="lastName" placeholder="Enter your Last name" required>
-    
-            <label for="birthdate">Birthdate:</label>
-            <input type="date" id="birthdate" name="birthdate" required>
-    
-            <!-- Styled submit button -->
-            <input type="submit" value="Submit">
-        </form>
-    </div>
-    <div class="result" id="hidden-div" style="display: none;">
-        <div class="name_it" id="name_it"></div>
-        <div class="mulank">
-            <h1 id="print_m"> </h1>
-            <div class="print_mulank" id="mul_det"></div>
-        </div>
-        <div class="bhagyank">
-            <h1 id="print_bhg"></h1>
-            <div class="print_bhagyank" id="bha_det"></div>
+  <header class="app-title">Numerology Calculator</header>
+
+  <main>
+    <!-- Form Card -->
+    <section class="card main">
+      <form id="numForm" novalidate>
+        <label for="firstName">First Name</label>
+        <input id="firstName" type="text" placeholder="Enter your first name" required/>
+
+        <label for="lastName">Last Name</label>
+        <input id="lastName" type="text" placeholder="Enter your last name"/>
+
+        <label for="dob">Date of Birth</label>
+        <input id="dob" type="date" required/>
+
+        <button type="submit" class="btn">Calculate</button>
+      </form>
+    </section>
+
+    <!-- Result Card -->
+    <section class="card result" id="resultBox" aria-live="polite">
+      <h1 class="name_it" id="printName"></h1>
+
+      <div class="section">
+        <h2 class="section-title" id="mulankTitle">Mulank</h2>
+        <p class="section-desc" id="mulankDesc"></p>
+
+        <div class="info-grid" id="mulankMeta">
+          <!-- Filled by JS: planet, color, day, metal, gemstone -->
         </div>
 
-    </div>
+        <div class="compat">
+          <h3 class="compat-title">Mulank Compatibility</h3>
+          <p class="compat-desc" id="mulankCompat"></p>
+        </div>
+      </div>
 
-</div>
-</div>
+      <div class="section">
+        <h2 class="section-title" id="bhagyankTitle">Bhagyank</h2>
+        <p class="section-desc" id="bhagyankDesc"></p>
+
+        <div class="info-grid" id="bhagyankMeta">
+          <!-- Filled by JS: keywords, color, day -->
+        </div>
+
+        <div class="compat">
+          <h3 class="compat-title">Bhagyank Compatibility</h3>
+          <p class="compat-desc" id="bhagyankCompat"></p>
+        </div>
+      </div>
+
+      <div class="note">
+        Note: Numerology provides symbolic guidance. Personal choices, effort, and context shape real outcomes.
+      </div>
+    </section>
+  </main>
+
+  <script src="event.js"></script>
 </body>
-<script src="event.js"></script>
 </html>
